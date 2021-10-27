@@ -48,7 +48,6 @@ def compress(request):
     "download-page-compress.html": if request method is POST
     '''
 
-    
     if request.method == "POST":
         #delete all files that are on server
         path = apps.get_app_config('PDFMaster_App').path
@@ -71,16 +70,16 @@ def compress(request):
         #object of ilovepdf api is created
         ilovepdf_object = ILovePdf('project_public_acea6791941b90040052bcfa605303c5_4zSbs98325f7c19dfbc3987d56ed81421ab8a', verify_ssl=True)
         #compress task of api is called
-        task = ilovepdf_object.new_task('compress')
+        task_compress = ilovepdf_object.new_task('compress')
         #add file to compress
-        task.add_file('media/'+uploaded_file.name)
+        task_compress.add_file('media/'+uploaded_file.name)
         #set output folder
-        task.set_output_folder('./media')
+        task_compress.set_output_folder('./media')
         #given file will now will compress
-        task.execute()
+        task_compress.execute()
         #compressed file will be downloaded in media
-        a=task.download()
-        task.delete_current_task()
+        a=task_compress.download()
+        task_compress.delete_current_task()
 
         #url of compressed file
         fileurl = 'media/'+a
@@ -140,14 +139,14 @@ def merge(request):
             print(fileurl)
 
         #merging
-        merger = PdfFileMerger()
+        merger_object = PdfFileMerger()
         #iterate over all pdf path given and append it to merge object
         for pdf in pdfs:
-            merger.append(pdf)
+            merger_object.append(pdf)
         #All pdf will be merged and merged output is written in merged.pdf file
-        merger.write("media/"+"merged.pdf")
+        merger_object.write("media/"+"merged.pdf")
         print("DONE")
-        merger.close()
+        merger_object.close()
 
         #url of merged file
         fileurl = 'media/merged.pdf'
@@ -335,28 +334,28 @@ def p2w(request):
         path = "\\".join(path)
 
         #absolute path of input pdf file
-        in_file = path+"\\media\\"+filename
+        inp_file = path+"\\media\\"+filename
         #absolute path of outpur word file
         out_file = path+"\\media\\"+"pdf2word.docx"
         # print out filenames
-        print(in_file)
+        print(inp_file)
         print(out_file)
 
         # create COM object
         comtypes.CoInitialize()
         # create word application object
-        word = comtypes.client.CreateObject('Word.Application')
+        word_object = comtypes.client.CreateObject('Word.Application')
         # key point 1: make word visible before open a new document
-        word.Visible = True
+        word_object.Visible = True
         # key point 2: wait for the COM Server to prepare well.
         time.sleep(3)
 
         # convert docx file to pdf file
-        doc=word.Documents.Open(in_file) # open docx file
-        doc.SaveAs(out_file, FileFormat=wdFormatPDF) # conversion
-        doc.Close() # close docx file
-        word.Visible = False
-        word.Quit() # close Word Application
+        doc_object=word_object.Documents.Open(inp_file) # open docx file
+        doc_object.SaveAs(out_file, FileFormat=wdFormatPDF) # conversion
+        doc_object.Close() # close docx file
+        word_object.Visible = False
+        word_object.Quit() # close Word Application
 
         #url word file generated
         fileurl = "media/pdf2word.docx"
