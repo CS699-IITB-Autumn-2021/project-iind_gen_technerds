@@ -104,3 +104,4 @@ Member 3: Vatsal Dani (Python Codes for the functionalities)
 
 ## Path to Code Documentation
 1. [Sphinx Documetation](Documentation/docs_django_sphinx/Build_html/html/index.html)
+2. [JS Documentation](Documentation/docs_js/index.html)
