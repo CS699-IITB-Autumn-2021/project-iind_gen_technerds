@@ -1,6 +1,8 @@
-
 $(document).ready(
-    function(){
+    /**
+     * Enables and Disables the Convert Button when file is Uploaded or not
+     */
+    function change_w2pdf_btn(){
         $('input:file').change(
             function(){
                 if ($(this).val()) {
@@ -13,10 +15,3 @@ $(document).ready(
             }
         );
 });
-
-/*
-$('#convert-btn').click(function() {
-    window.location.href = "{% url 'w2p_download' %}";
-    return false;
-});
-*/

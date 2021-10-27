@@ -1,5 +1,8 @@
 $(document).ready(
-    function() {
+    /**
+     * Enables and Disables the Read PDF Button when file is Uploaded or not
+     */
+    function change_pdf_reader_btn() {
         $('input:file').change(
             function() {
                 if ($(this).val()) {

@@ -1,5 +1,8 @@
 $(document).ready(
-    function(){
+    /**
+     * Enables and Disables the Merge Button when file is Uploaded or not
+     */
+    function change_merge_btn(){
         $('input:file').change(
             function(){
                 if ($(this).val()) {
@@ -14,7 +17,9 @@ $(document).ready(
 });
 
 
-
+/**
+ * Pushes the names of files uploaded to the HTML
+ */
 updateList = function() {
     var input = document.getElementById('myFile');
     var output = document.getElementById('fileList');
@@ -29,32 +34,3 @@ updateList = function() {
         output.innerHTML="";
     }
 }
-
-
-/*
-updateList = function() {
-    var input = document.getElementById('myFile');
-    var output = document.getElementById('fileList');
-    var children = "";
-    if (input.files.length>0){
-        for (var i = 0; i < input.files.length; ++i) {
-            children += '<div class="listitemClass list-group-item">' + input.files.item(i).name + '</div>';
-        }
-        output.innerHTML = children;
-    }
-    else{
-        output.innerHTML="";
-    }
-}
-
-*/
-
-
-/*
-$(function() {
-    $( "#fileList" ).sortable({
-    update: function(event, ui) {
-    }//end update
-    });
-});
-*/
