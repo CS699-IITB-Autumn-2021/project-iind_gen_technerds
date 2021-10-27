@@ -48,6 +48,7 @@ def compress(request):
     "download-page-compress.html": if request method is POST
     '''
 
+    
     if request.method == "POST":
         #delete all files that are on server
         path = apps.get_app_config('PDFMaster_App').path
