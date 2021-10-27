@@ -1,11 +1,8 @@
-// $("input[type='number']").on("keyup", function(){
-//     if($(this).val() != ""){
-//         $("#split-btn").removeAttr("disabled");
-//     }
-// });
-
 $(document).ready(
-    function(){
+    /** 
+     * Enables and Disables the Split Button when file is Uploaded or not
+     */
+    function change_split_btn(){
         $('input:file').change(
             function(){
                 if ($(this).val()) {
@@ -21,7 +18,7 @@ $(document).ready(
                             $('#split-btn').attr('disabled',true);
                         }
                     });
-                } 
+                }
                 else{
                     $('#split-btn').attr('disabled',true);
                 }
@@ -30,25 +27,12 @@ $(document).ready(
 });
 
 
-$('#split-btn').click(function() {
-    window.location.href = 'download-page-split.html';
-    return false;
-});
-
-// $(document).on('click', '.addrange', function(){
-//     var html = '<div class="range" style="display: flex; margin-bottom: 10px;"><div class="input-group"><div class="input-group-prepend"><div class="input-group-text">From</div></div><input type="number" class="form-control" required min="1" max=""></div><div class="input-group"><div class="input-group-prepend"><div class="input-group-text">To</div></div><input type="number" class="form-control" required min="1" max=""><button class=" delete_range btn btn-danger" onclick="del_range()">X</button></div>';
-//     $(this).parent().append(html);
-//     var delete_range_btn = document.getElementsByClassName('delete_range');
-//     console.log(delete_range_btn);
-// });
-
-// function del_range(){
-//     console.log("hello");
-//     console.log(del_range.caller)
-// }
-
-$("#addrange").click(function(){
-    var html = '<div id="range-div" class="range" style="display: flex; margin-bottom: 10px;"><div class="input-group"><div class="input-group-prepend"><div class="input-group-text">From</div></div><input id="r1" type="number" class="form-control" required min="1" max=""></div><div class="input-group"><div class="input-group-prepend"><div class="input-group-text">To</div></div><input type="number" id="r2" class="form-control" required min="1" max=""><button id="delete_range" class="btn btn-danger">X</button></div>';
+$("#addrange").click(
+    /** 
+     * Used to add ranges in Split PDF page when Add Range button is clicked 
+     */
+    function add_range(){
+    var html = '<div id="range-div" class="range" style="display: flex; margin-bottom: 10px;"><div class="input-group"><div class="input-group-prepend"><div class="input-group-text">From</div></div><input type="number" class="form-control" required min="1" max="" name="extra_range1"></div><div class="input-group"><div class="input-group-prepend"><div class="input-group-text">To</div></div><input type="number" class="form-control" required min="1" max="" name="extra_range2"><button id="delete_range" class="btn btn-danger">X</button></div>';
 
     $("#additional_range").append(html);
 
@@ -59,15 +43,10 @@ $("#addrange").click(function(){
     }
 });
 
-$(document).on('click','#delete_range',function(){
+
+/** 
+ * Used to delete a range on clicking the X button
+ */
+$(document).on('click','#delete_range',function del_range(){
     $(this).closest('#range-div').remove();
 });
-
-// uploadbtn = document.getElementById('upload-btn');
-
-// uploadbtn.addEventListener('click', function(){
-//     range_div_classes = document.querySelector('.range-main-div').classList;
-//     if(range_div_classes.contains('hide')){
-//         range_div_classes.remove('hide');
-//     }
-// })
