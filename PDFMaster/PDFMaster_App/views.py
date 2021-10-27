@@ -27,7 +27,7 @@ def index(request):
     ------------
     request: GET
 
-    Render
+    Returns
     ------------
     "index.html"
 
@@ -42,15 +42,15 @@ def compress(request):
     ------------
     request: GET / POST
 
-    Render
+    Returns
     ------------
-    "compress.html" if request methos is GET
-    "download-page-compress.html" if request method is POST
+    "compress.html": if request methos is GET
+    "download-page-compress.html": if request method is POST
     '''
 
     if request.method == "POST":
         #delete all files that are on server
-        path = apps.get_app_config('masterPDF_App').path
+        path = apps.get_app_config('PDFMaster_App').path
         path = path.split("\\")
         path = path[:-1]
         path = "/".join(path)
@@ -96,7 +96,7 @@ def compress_download(request):
     ------------
     request: GET
 
-    Render
+    Returns
     ------------
     "download-page-compress.html"
     '''
@@ -110,15 +110,15 @@ def merge(request):
     ------------
     request: GET / POST
 
-    Render
+    Returns
     ------------
-    "merge.html" if request methos is GET
-    "download-page-merge.html" if request method is POST
+    "merge.html": if request methos is GET
+    "download-page-merge.html": if request method is POST
     '''
 
     if request.method == "POST":
         #delete all files that are on server
-        path = apps.get_app_config('masterPDF_App').path
+        path = apps.get_app_config('PDFMaster_App').path
         path = path.split("\\")
         path = path[:-1]
         path = "/".join(path)
@@ -163,7 +163,7 @@ def merge_download(request):
     ------------
     request: GET
 
-    Render
+    Returns
     ------------
     "download-page-merge.html"
     '''
@@ -177,14 +177,14 @@ def split(request):
     ------------
     request: GET / POST
 
-    Render
+    Returns
     ------------
-    "split.html" if request methos is GET
-    "download-page-split.html" if request method is POST
+    "split.html": if request methos is GET
+    "download-page-split.html": if request method is POST
     '''
     if request.method == "POST":
         #delete all files that are on server
-        path = apps.get_app_config('masterPDF_App').path
+        path = apps.get_app_config('PDFMaster_App').path
         path = path.split("\\")
         path = path[:-1]
         path = "/".join(path)
@@ -284,7 +284,7 @@ def split_download(request):
     ------------
     request: GET
 
-    Render
+    Returns
     ------------
     "download-page-split.html"
     '''
@@ -298,14 +298,14 @@ def p2w(request):
     ------------
     request: GET / POST
 
-    Render
+    Returns
     ------------
-    "pdf-to-word.html" if request methos is GET
-    "download-page-p2w.html" if request method is POST
+    "pdf-to-word.html": if request methos is GET
+    "download-page-p2w.html": if request method is POST
     '''
     if request.method == "POST":
         #delete all files that are on server
-        path = apps.get_app_config('masterPDF_App').path
+        path = apps.get_app_config('PDFMaster_App').path
         path = path.split("\\")
         path = path[:-1]
         path = "/".join(path)
@@ -327,8 +327,8 @@ def p2w(request):
 
         # absolute path is needed
         # be careful about the slash '\', use '\\' or '/' or raw string r"..."
-        #get absolute path of 'masterPDF' project
-        path = apps.get_app_config('masterPDF_App').path
+        #get absolute path of 'PDFMaster' project
+        path = apps.get_app_config('PDFMaster_App').path
         path = path.split('\\')
         path = path[:-1]
         path = "\\".join(path)
@@ -372,7 +372,7 @@ def p2w_download(request):
     ------------
     request: GET
 
-    Render
+    Returns
     ------------
     "download-page-p2w.html"
     '''
@@ -386,14 +386,14 @@ def w2p(request):
     ------------
     request: GET / POST
 
-    Render
+    Returns
     ------------
-    "word-to-pdf.html" if request methos is GET
-    "download-page-w2p.html" if request method is POST
+    "word-to-pdf.html": if request methos is GET
+    "download-page-w2p.html": if request method is POST
     '''
     if request.method == "POST":
         #delete all files that are on server
-        path = apps.get_app_config('masterPDF_App').path
+        path = apps.get_app_config('PDFMaster_App').path
         path = path.split("\\")
         path = path[:-1]
         path = "/".join(path)
@@ -414,8 +414,8 @@ def w2p(request):
 
         # absolute path is needed
         # be careful about the slash '\', use '\\' or '/' or raw string r"..."
-        #get absolute path of 'masterPDF' project
-        path = apps.get_app_config('masterPDF_App').path
+        #get absolute path of 'PDFMaster' project
+        path = apps.get_app_config('PDFMaster_App').path
         path = path.split('\\')
         path = path[:-1]
         path = "\\".join(path)
@@ -457,7 +457,7 @@ def w2p_download(request):
     ------------
     request: GET
 
-    Render
+    Returns
     ------------
     "download-page-w2p.html"
     '''
@@ -471,14 +471,14 @@ def pdf_reader(request):
     ------------
     request: GET / POST
 
-    Render
+    Returns
     ------------
-    "pdf-reader.html" if request methos is GET
-    "read-pdf-page.html" if request method is POST
+    "pdf-reader.html": if request methos is GET
+    "read-pdf-page.html": if request method is POST
     '''
     if request.method == "POST":
         #delete all files that are on server
-        path = apps.get_app_config('masterPDF_App').path
+        path = apps.get_app_config('PDFMaster_App').path
         path = path.split("\\")
         path = path[:-1]
         path = "/".join(path)
@@ -507,7 +507,7 @@ def pdf_reader_page(request):
     ------------
     request: GET
 
-    Render
+    Returns
     ------------
     "read-pdf-page.html"
     '''
