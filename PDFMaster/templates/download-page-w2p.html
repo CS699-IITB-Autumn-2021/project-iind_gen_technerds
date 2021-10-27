@@ -23,9 +23,9 @@
                 <img src="{% static 'img/logo-white.png' %}" alt="OMNIFOOD_LOGO" class="logo">
                 <img src="{% static 'img/logo.png' %}" alt="OMNIFOOD_LOGO" class="logo-black">
                 <ul class="main-nav js--main-nav">
-                    <li><a href="index.html">PDF Master</a></li>
-                    <li><a href="index.html#works">How it Works</a></li>
-                    <li><a href="index.html#tools">Tools</a></li>
+                    <li><a href="{% url 'index' %}">PDF Master</a></li>
+                    <li><a href="{% url 'index' %}">How it Works</a></li>
+                    <li><a href="{% url 'index' %}">Tools</a></li>
                     <li><a href="#contact">Contact Us</a></li>
                 </ul>
                 <a class="mobile-nav-icon js--nav-icon"><i class="fas fa-bars"></i></a>
