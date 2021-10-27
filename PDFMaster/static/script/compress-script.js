@@ -1,5 +1,8 @@
 $(document).ready(
-    function() {
+    /**
+     * Enables and Disables the Compress Button when file is Uploaded or not
+     */
+    function change_comp_btn() {
         $('input:file').change(
             function() {
                 if ($(this).val()) {
@@ -12,8 +15,3 @@ $(document).ready(
             }
         );
     });
-
-//$('#compress-btn').click(function() {
-    //window.location.href = "{% url 'compress_download' %}";
-    //return false;
-//});
