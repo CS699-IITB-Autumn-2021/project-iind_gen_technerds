@@ -1,3 +1,5 @@
+/* Main whole body CSS */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +11,7 @@ body {
     font-family: 'Montserrat', 'sans-serif';
 }
 
+/* Hide Class */
 .hide {
     display: none;
 }
@@ -32,6 +35,7 @@ body {
     justify-content: center;
 }
 
+/* Footer Section */
 .contact-footer {
     background-color: #333;
     color: #888;
@@ -64,6 +68,8 @@ body {
     visibility: hidden;
 }
 
+/* Headings */
+
 h1,
 h2,
 h3 {
@@ -81,6 +87,8 @@ h1 {
     letter-spacing: 1px;
 }
 
+
+/* Specially Designed Buttons*/
 .btn-primary:disabled {
     color: #fff !important;
     background-color: #e67e21 !important;
@@ -123,11 +131,7 @@ input[type=submit] {
     margin-right: 15px;
 }
 
-.btn-ghost:link,
-.btn-ghost:visited {
-    border: 1px solid #e67e22;
-    color: #e67e22;
-}
+
 
 .btn:hover,
 .btn:active,
@@ -142,11 +146,7 @@ input[type=submit] {
     border: 1px solid #cf6d17;
 }
 
-.btn-ghost:hover,
-.btn-ghost:active {
-    border: 1px solid #cf6d17;
-    color: #fff;
-}
+/* Header Section */
 
 header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/hero.jpg);
@@ -163,6 +163,8 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+/* Logos */
 
 .logo {
     margin-top: 20px;
@@ -261,6 +263,8 @@ header {
     color: #fff;
 }
 
+
+/* Tools Plan Boxes */
 .plan-box {
     background-color: #fff;
     border-radius: 5px;
@@ -298,14 +302,6 @@ header {
     color: #e67e22;
 }
 
-.plan-price span {
-    font-size: 30%;
-    font-weight: 300;
-}
-
-.plan-price-meal {
-    font-size: 80%;
-}
 
 .plan-box ul {
     list-style: none;
@@ -319,6 +315,8 @@ header {
     color: #e67e22;
     margin-right: 7px;
 }
+
+/* How it works Section */
 
 .section-steps {
     background-color: #ffffff;
@@ -436,18 +434,12 @@ h2:after {
         width: 17px;
         margin-right: 5px;
     }
-    .city-feature {
-        font-size: 90%;
-    }
     .plan-box {
         width: 100%;
         margin-left: 0%;
     }
     .plan-price {
         font-size: 250%;
-    }
-    .contact-form {
-        width: 80%;
     }
 }
 
@@ -461,10 +453,6 @@ h2:after {
     .row,
     .hero-text-box {
         padding: 0 4%;
-    }
-    .col {
-        width: 100%;
-        margin: 0 0 4% 0;
     }
     .main-nav {
         display: none;
@@ -525,17 +513,5 @@ h2:after {
     }
     .works-step:last-of-type {
         margin-bottom: 20px;
-    }
-    .app-screen {
-        width: 40%;
-    }
-}
-
-
-/*Small Phones from 0 to 480px*/
-
-@media only screen and (max-width: 480px) {
-    .contact-form {
-        width: 100%;
     }
 }
