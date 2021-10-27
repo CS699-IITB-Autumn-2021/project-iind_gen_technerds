@@ -99,7 +99,9 @@ It can be used by students and working professional for their day to day PDF rel
 ## Team Details
 
 Member 1: Anmol Namdev (Frontend and Sphinx Documentation)
+
 Member 2: Jeel Nathani (Backend and Django Integration)
+
 Member 3: Vatsal Dani (Python Codes for the functionalities)
 
 ## Path to Code Documentation
